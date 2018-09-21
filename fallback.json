@@ -1,0 +1,15 @@
+{
+  "results": [
+    {
+      "wrapperType": "track",
+      "kind": "podcast",
+      "artistId": 683402095,
+      "collectionId": 535121941,
+      "trackId": 535121941,
+      "artistName": "thoughtbot",
+      "collectionName": "Giant Robots Smashing Into Other Giant Robots",
+      "trackName": "Failed to fetch podcasts",
+      "artworkUrl100": "images/icons/icon_96x96.png"
+    }
+  ]
+}
