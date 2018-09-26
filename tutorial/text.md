@@ -4,7 +4,7 @@
 
 Progressive web apps are apps that are reliable, fast, and engaging.
 
-#### Reliable: Load instantly and never show the downasaur, even in uncertain network conditions.
+#### Reliable: Load instantly and never show the dinosaur, even in uncertain network conditions.
 
 When launched from the user’s home screen, service workers enable a Progressive Web App to load instantly, regardless of the network state.
 
@@ -24,7 +24,7 @@ To get you started on creating fast web apps, here are three things to think abo
 
 #### Engaging: Feel like a natural app on the device, with an immersive user experience.
 
-Progressive Web Apps are installable and live on the user's home screen, without the need for an app store. They offer an immersive full screen experience with help from a web app manifest file and can even re-engage users with web push notifications.
+Progressive Web Apps are capable of being installed and live on the user's home screen, without the need for an app store. They offer an immersive full screen experience with help from a web app manifest file and can even re-engage users with web push notifications.
 
 The Web App Manifest allows you to control how your app appears and how it's launched. You can specify home screen icons, the page to load when the app is launched, screen orientation, and even whether or not to show the browser chrome.
 
@@ -46,7 +46,7 @@ touch index.html, app.js, styles.css
 ```
 
 **index.html**
-Populate with a blank htmk template, enter a title, link a styles.css, and add the following to the body tag:
+Populate with a blank html template, enter a title, link a styles.css, and add the following to the body tag:
 
 ```html
 <body>
@@ -69,7 +69,7 @@ To get our basic web app started:
 2. Get a reference to the text input and button so we can see what the user typed in as the search and register and click listener.
 3. Create a function that will take a podcast from the json and will return a template string to render the podcast in the html
 4. Then create a function that will go through json and the podcast data and then map them to our `createPodcastResult` function that creates the html podcasts. The html should be mounted onto `main.innerHTML`.
-5. Lastly, register a click listener on the button that will invoke the `updatePodcasts()` function. Pass the fuction the search term the user is searching from `search.value`.
+5. Lastly, register a click listener on the button that will invoke the `updatePodcasts()` function. Pass the function the search term the user is searching from `search.value`.
 
 ```js
 const main = document.querySelector('main');
@@ -130,14 +130,14 @@ There are two main steps to turning a plain web app into a Progressive Web App
 
 The manifest is just a json file that collects info about your application into one config file. It describes the application, its colors and icons. We also define which URL (relative to the URL the app is loaded from) should be opened if the application is installed to a device.
 
-We can gerenate a manigest using this [generator](https://app-manifest.firebaseapp.com/).
+We can generate a manifest using this [generator](https://app-manifest.firebaseapp.com/).
 
 Once you have the manifest file in your project folder, you just need to add a link to it in the `head` of html file and then the application picks up our manifest.
 
 ![Web App Manifest Generator](https://gyazo.com/679c76ffb65c3ff9defcc38abdf67a6a)
 Fill in the placeholders and upload an image to generate icons, then download the zip file.
 
-Before linking the manifest, the manifest wasn't detected in the chrom dev tools Applications tab. If you visit it again, after linking the manifest, you should see it detected with all the parameters and icons we defined.
+Before linking the manifest, the manifest wasn't detected in the chrome dev tools Applications tab. If you visit it again, after linking the manifest, you should see it detected with all the parameters and icons we defined.
 
 before: https://gyazo.com/fe97fdd5d721daa5ba1dfc2d71482da8
 
@@ -153,7 +153,7 @@ We still need to add a Service Worker, in addition to the App Manifest, in order
 
 **What is a service worker?**
 
-- Service workers are a proxy that sits inside the browser, but it's controlled by JS. So you tell the SW to run a java script and what that script does is takes the files that you need and pout it in a special cache. Not the browser cache, because that doesn;t work when your offfline. This is a new additional cache that you control. Completely flexible and under your control: you can control the lifetime, the file times that go into it, and the size. There are tools to help manage this cache.
+- Service workers are a proxy that sits inside the browser, but it's controlled by JS. So you tell the SW to run a java script and what that script does is takes the files that you need and pout it in a special cache. Not the browser cache, because that doesn't work when your offline. This is a new additional cache that you control. Completely flexible and under your control: you can control the lifetime, the file times that go into it, and the size. There are tools to help manage this cache.
 
 - Service workers are a type of web worker, an object that executes a script separately from the main browser thread. Service workers run independent of the application they are associated with and can receive messages when not active (either because your application is in the background or not open, or the browser is closed).
 
@@ -209,14 +209,14 @@ npm i --save workbox-sw
 Service workers enable applications to control network requests, cache those requests to improve performance and provide offline access to cached content so user have an app that works even when their network doesn't.
 
 - To start using Workbox you just need to import the `workbox-sw.js` file in your service worker. When supplying the path for workbox - use the dev version for help with debugging during development.
-- Precache Assets During Installation (/Caching and serving static assets): If you have assets (HTML, CSS, JavaScript, images) that are shared across your application you can cache them when you first install the service worker in the client’s browser, during the install process, so we can have a fast start up time of the application and serve at least something when the user is offline. This technique is at the core of the Application Shell Architecture. If you load the website and go the cache you will see the files for the application shell there. If we go into 'offline' mode and 'refersh' - (not a frad refresh- that will clear the cache) we can see the application shell still shows up. https://gyazo.com/c8d91563dff7b183567e68fbd5f6984e https://gyazo.com/fd9177313a223c8af4712574531747e4
-- cache the calls being made to the itunes api using `networkFirst()` strategy
-- For images use a `cacheFirst()` strategy and additional paramaters. Keep a max of 20 entries for 20 hours at most, and save only on a response of 0 - 200. This is a great way to keep the size of our cache manageable on our users devices.
+- Pre-cache Assets During Installation (/Caching and serving static assets): If you have assets (HTML, CSS, JavaScript, images) that are shared across your application you can cache them when you first install the service worker in the client’s browser, during the install process, so we can have a fast start up time of the application and serve at least something when the user is offline. This technique is at the core of the Application Shell Architecture. If you load the website and go the cache you will see the files for the application shell there. If we go into 'offline' mode and 'refresh' - (not a hard refresh- that will clear the cache) we can see the application shell still shows up. https://gyazo.com/c8d91563dff7b183567e68fbd5f6984e https://gyazo.com/fd9177313a223c8af4712574531747e4
+- cache the calls being made to the iTunes api using `networkFirst()` strategy
+- For images use a `cacheFirst()` strategy and additional parameters. Keep a max of 20 entries for 20 hours at most, and save only on a response of 0 - 200. This is a great way to keep the size of our cache manageable on our users devices.
 
 ```js
 importScripts('./node_modules/workbox-sw/build/workbox-sw.js');
 
-const staticAssests = [
+const staticAssets = [
   './',
   './index.html',
   './app.js',
@@ -226,7 +226,7 @@ const staticAssests = [
 ];
 
 if (workbox) {
-  workbox.precaching.precacheAndRoute(staticAssests);
+  workbox.precaching.precacheAndRoute(staticAssets);
 }
 
 workbox.routing.registerRoute(
@@ -258,7 +258,7 @@ workbox.routing.registerRoute(
 
 The technologies can be intimidating. Do you have to convince your team to do a complete overhaul? The short answer is definitely no.
 
-It can be complex to introduce new technologies, especially at larger companies with complex organisational structures and sites with legacy code and architecture.
+It can be complex to introduce new technologies, especially at larger companies with complex organizational structures and sites with legacy code and architecture.
 
 Think about this as an ongoing journey to invest and build on the Web.
 
@@ -281,6 +281,6 @@ This is likely to be the case at really large companies.
 
 ### Credits
 
-- [Progressive Web App tutorial – learn to build a PWA from scratch](https://youtu.be/gcx-3qi7t7c) This example explains the concept of the `networkFirst` method really well in just plain javascript.
-- [PWA Training Course with Sarah Clark](https://www.youtube.com/playlist?list=PLlyCyjh2pUe9RHFCJHU0kxpaivUzADPYk) This playlist is complete with the 'why' and the 'how'
 - [developers.google.com](https://developers.google.com/web/progressive-web-apps/)
+- [PWA Training Course with Sarah Clark](https://www.youtube.com/playlist?list=PLlyCyjh2pUe9RHFCJHU0kxpaivUzADPYk) This playlist is complete with the 'why' and the 'how' of PWA's
+- [Progressive Web App tutorial – learn to build a PWA from scratch](https://youtu.be/gcx-3qi7t7c) This example explains the concept of the `networkFirst` method really well in just plain javascript.
